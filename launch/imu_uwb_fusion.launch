@@ -1,0 +1,27 @@
+<launch>
+
+    <param name="use_sim_time" value="true"/>
+
+    <!--node pkg="nmea_navsat_driver" type="nmea_topic_driver" name="nmea_topic_driver" output="screen"/-->
+
+    <node pkg="imu_uwb_fusion" type="imu_uwb_fusion_node" name="imu_uwb_fusion_node" output="screen">
+        <param name="sigma_an" value="3.5848651612538265e+04"/>
+        <param name="sigma_wn" value="5.0319853834530663e-00"/>
+        <param name="sigma_aw" value="1.4189758078282432e-03"/>
+        <param name="sigma_ww" value="1.3487170893986536e-05"/>
+        <!--param name="sigma_an" value="3.5848651612538265e-02"/>
+        <param name="sigma_wn" value="5.0319853834530663e-03"/>
+        <param name="sigma_aw" value="1.4189758078282432e-03"/>
+        <param name="sigma_ww" value="1.3487170893986536e-05"/-->
+
+    </node>
+    
+    <node pkg="imu_uwb_fusion" type="moving_average_filter_node" name="moving_average_filter_node" output="screen">
+    </node>
+
+    <node pkg="imu_uwb_fusion" type="uwb_plot_node" name="uwb_plot_node" output="screen">
+    </node>
+    
+    <node pkg="rviz" type="rviz" name="rviz" output="screen" args="-d $(find imu_uwb_fusion)/launch/rviz_new.rviz"/>
+	
+</launch>

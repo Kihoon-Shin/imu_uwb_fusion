@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        "mutex": "cpp",
+        "condition_variable": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "*.tcc": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "array": "cpp",
+        "bitset": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp"
+    }
+}
