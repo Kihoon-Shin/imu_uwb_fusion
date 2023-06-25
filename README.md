@@ -18,20 +18,4 @@ This is modified version of chennuo0125-HIT/imu_gps_fusion repository.
 
 - [wgs_conversions]( https://github.com/gyjun0230/wgs_conversions ) for transform between coordinate in wgs frame and coordinate in enu frame
 
-## Dataset
 
-- https://lcas.lincoln.ac.uk/nextcloud/index.php/s/KfItDFgwwis5Xrk
-
-## Test
-
-```
-roslaunch imu_gps_fusion imu_gps_fusion.launch
-```
-
-```
-rosbag play *.bag --clock
-```
-
-## Result
-
-![](result.png)
