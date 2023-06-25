@@ -1,4 +1,4 @@
-# Imu and Gps Fusion by ESKF_branch_test
+# Imu and Gps Fusion by ESKF ver1.0
 This repository is Error-State Kalman Filter for Imu-Uwb sensor fusion.
 This is modified version of chennuo0125-HIT/imu_gps_fusion repository.
 ## Explain
