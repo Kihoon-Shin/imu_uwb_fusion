@@ -1,0 +1,98 @@
+0415
+* Adding Pozyx arduino file to turtlebot_core arduino file
+- upload done
+- when 'roslaunch turtlebot3_bringup turtlebot3_robot.launch', there is an buffer error that
+'[ERROR] [1521650797.920229]: Message from device dropped: message larger than buffer'
+=>> The solution is to fix ~/Arduino/libraries/ros_lib/ros/node_handle.h
+Under the /* Node Handle */:
+increase the OUTPUT_SIZE to 1024
+(https://github.com/ROBOTIS-GIT/turtlebot3/issues/160)
+
+* I Edited turtlebot_core arduino file to publish the uwb msgs to ROS and uploading successed.
+but when I typed 'roslaunch turtlebot3_bringup turtlebot3_robot.launch', the error occured that
+'[ERROR] [1681545839.060578]: Cannot import package : uwb_msg'
+Which means it could't find uwb_msg package.
+=>> The solution is to edit the 'package.xml', 'CMakeLists.txt' files in 'tuetlebot3_bringup' package.
+(http://wiki.ros.org/ROS/Tutorials/DefiningCustomMessages#Dependencies)
+I added these two lines in 'package.xml'file
+```
+<build_depend>name_of_package_containing_custom_msg</build_depend>
+<exec_depend>name_of_package_containing_custom_msg</exec_depend>
+```
+
+0420
+
+#1
+----------------------------------------
+	0x1179(-300,943,227)			door
+			
+					0x1166(173, 710,245)
+
+
+
+
+
+
+
+
+
+0x116F(-435,51,209)
+			        0x113B(0,0,253)
+-----------------------------------------
+* Measured localization with 4 anchors which have little different height
+The result is that x, y coordinate is good but z coordinate is very bad.
+So, I'll add another 5th anchor with low height.
+
+#2
+----------------------------------------
+	0x1179(-300,943,245)			door
+			
+					0x1166(173,710,50)
+
+
+
+
+					0x1102(173,590,110)
+
+
+
+
+0x116F(-435,51,209)
+			        0x113B(0,0,253)
+-----------------------------------------
+
+#3
+----------------------------------------
+	0x1179(-300,943,245)			door
+			
+					0x1166(173,710,50)
+
+
+
+0x116F(-505,497,220)
+					0x1102(173,590,110)
+
+
+
+
+
+			        0x113B(0,0,253)
+-----------------------------------------
+
+#4
+----------------------------------------
+	0x1179(-300,943,245)			door
+			
+					0x1166(173,710,50)
+
+
+
+0x116F(-473,467,32)
+					0x1102(173,590,110)
+
+
+
+
+
+			        0x113B(0,0,253)
+-----------------------------------------
