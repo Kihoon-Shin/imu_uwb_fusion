@@ -7,7 +7,7 @@ This is modified version of chennuo0125-HIT/imu_gps_fusion repository.
 
 ## Requirements
 
-- [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+- [ROS Noetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 - Eigen3
 
 ## Reference Theory
